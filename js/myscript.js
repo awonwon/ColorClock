@@ -1,6 +1,13 @@
 $(function(){
+  display();
 
   setInterval(function(){
+    display();
+  },1000);
+
+});
+
+function display(){
   var d = new Date($.now()); // d = new Date();
   var h = format_digit(d.getHours(),'00');
   var m = format_digit(d.getMinutes(),'00');
@@ -18,10 +25,7 @@ $(function(){
 
   $('body').css('backgroundColor',bg);
   $('body').css('color',color);
-
-  },1000);
-
-});
+}
 
 function format_digit (obj,format) {
   var digit = format.length - obj.toString().length;
